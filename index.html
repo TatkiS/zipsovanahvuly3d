@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Радіо - Зіпсована Хвиля</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      font-size: 4em;
+      animation: titleWave 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleWave {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    audio.player {
+      width: 60%;
+      margin: 20px auto;
+      display: block;
+      animation: playerWave 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes playerWave {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .widget {
+      text-align: center;
+      color: white;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <video id="video-background" autoplay muted loop>
+    <source src="your-video-file.mp4" type="video/mp4">
+  </video>
+
+  <h1>Радіо - Зіпсована Хвиля</h1>
+
+  <!-- Player -->
+  <audio class="player" controls>
+    <source src="http://15404.cloudrad.io:9020/live" type="audio/mpeg">
+  </audio>
+
+  <!-- Widgets -->
+  <div class="widget">
+    Поточна пісня: <span id="stream_info_song">Завантаження...</span><br>
+    Назва потоку: <span id="stream_info_title">Завантаження...</span><br>
+    Бітрейт: <span id="stream_info_bitrate">Завантаження...</span><br>
+    Поточні слухачі: <span id="stream_info_listeners">Завантаження...</span><br>
+    Максимальна кількість слухачів: <span id="stream_info_maxlisteners">Завантаження...</span><br>
+    Статус джерела: <span id="stream_info_source">Завантаження...</span><br>
+    Останні треки: <span id="stream_info_songhistory">Завантаження...</span><br>
+  </div>
+
+  <!-- Scripts -->
+  <script language="javascript" type="text/javascript" src="https://cdn2.cloudrad.io/RadioZipsuvanaHvilya/live/streaminfo.js"></script>
+</body>
+</html>
